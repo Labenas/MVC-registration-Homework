@@ -1,0 +1,52 @@
+﻿@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+@if (Model?.UserName == null)
+{
+
+
+<div class="signup-form">
+    <form asp-controller="Register" asp-action="Create" method="post">
+        <h2>Sign Up</h2>
+        <p>Please fill in this form to create an account!</p>
+        <hr>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    </span>
+                </div>
+                <input asp-for="@Model.UserName" type="text" class="form-control" name="username" placeholder="Username" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    </span>
+                </div>
+                <input asp-for="@Model.LastName" type="text" class="form-control" name="Last Name" placeholder="Last Name" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    </span>
+                </div>
+                <input  asp-for="@Model.Email" type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+    </form>
+</div>
+}
+else
+{
+<h2>Welcome @Model.UserName @Model.LastName</h2> <h3>Have a nice day! </h3> 
+<br />
+<h3>Don't forget to check your email @Model.Email </h3>
+}
