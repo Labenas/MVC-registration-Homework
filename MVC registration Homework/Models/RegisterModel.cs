@@ -20,8 +20,8 @@ namespace MVC_registration_Homework.Models
         public string LastName { get; set; }
 
         [Range(1, 100, ErrorMessage = "Please enter the Age value between 1 and 100.")]
-        [Required(ErrorMessage = "Age field is empty please enter your age")]
-        public int Age { get; set; }
+        [Required(ErrorMessage = "Age field is empty, please enter your age")]
+        public int? Age { get; set; }
 
         [EmailAddress(ErrorMessage = "The Email Address is not valid")]
         [Required(ErrorMessage = "Email adress is empty, please enter your email")]
