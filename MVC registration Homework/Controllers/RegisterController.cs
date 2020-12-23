@@ -15,13 +15,13 @@ namespace MVC_registration_Homework.Controllers
         {
             return View();
         }
-        // GET: Movies/Create
+        // GET
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: 
         [HttpPost]
         [ValidateAntiForgeryToken]
 
@@ -34,12 +34,7 @@ namespace MVC_registration_Homework.Controllers
             }
             return View("Index",model);
         }
-        /* [HttpPost]
-         public ActionResult Create(RegisterModel model)
-         {
-             return View("Index",model);
-         }
-        */
+     
 
     }
 }
