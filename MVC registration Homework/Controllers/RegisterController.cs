@@ -15,11 +15,9 @@ namespace MVC_registration_Homework.Controllers
         {
             return View();
         }
-        // POST: 
+        // POST
         [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public IActionResult Create(
+        public ActionResult Create(
             [Bind("UserName,LastName,Age,Email")] RegisterModel model)
         {
             if (!ModelState.IsValid)

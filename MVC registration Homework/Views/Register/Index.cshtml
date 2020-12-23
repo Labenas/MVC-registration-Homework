@@ -5,7 +5,7 @@
 @if (Model?.UserName == null)
 {
         
-
+    // Main form layout
 <div class="signup-form">
     <form asp-controller="Register" asp-action="Create" method="post">
         <h2>Sign Up</h2>
@@ -61,6 +61,7 @@
     </form>
 </div>
 }
+//Displaying data received from form entries
 else
 {
 <h2>Welcome @Model.UserName @Model.LastName and your are @Model.Age year's old.</h2> <h3>Have a nice day! </h3> 
