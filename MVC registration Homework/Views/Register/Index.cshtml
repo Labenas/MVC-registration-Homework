@@ -4,40 +4,56 @@
 }
 @if (Model?.UserName == null)
 {
-
+        
 
 <div class="signup-form">
     <form asp-controller="Register" asp-action="Create" method="post">
         <h2>Sign Up</h2>
         <p>Please fill in this form to create an account!</p>
         <hr>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
                     </span>
                 </div>
-                <input asp-for="@Model.UserName" type="text" class="form-control" placeholder="Username" required="required">
+                <input asp-for="@Model.UserName" type="text" class="form-control" placeholder="Enter your Name">
             </div>
+            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
                     </span>
                 </div>
-                <input  asp-for="@Model.LastName" type="text" class="form-control" placeholder="Last Name" required="required">
-                <asp:Textbox id="txtLastName" runat="server"></asp:Textbox>
+                <input asp-for="@Model.LastName" type="text" class="form-control" placeholder="Enter your Last Name">
             </div>
+            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
                     </span>
                 </div>
-                <input  asp-for="@Model.Email" type="email" class="form-control" placeholder="Email Address" required="required">
+                <input asp-for="@Model.Age" type="text" class="form-control" placeholder="Enter your Age">
             </div>
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                    </span>
+                </div>
+                <input asp-for="@Model.Email" type="email" class="form-control" placeholder="Enter your Email Address">
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
@@ -47,7 +63,7 @@
 }
 else
 {
-<h2>Welcome @Model.UserName @Model.LastName</h2> <h3>Have a nice day! </h3> 
+<h2>Welcome @Model.UserName @Model.LastName and your are @Model.Age year's old.</h2> <h3>Have a nice day! </h3> 
 <br />
 <h3>Don't forget to check your email @Model.Email </h3>
 }

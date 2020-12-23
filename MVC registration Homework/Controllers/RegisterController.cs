@@ -15,13 +15,31 @@ namespace MVC_registration_Homework.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Create(RegisterModel model)
+        // GET: Movies/Create
+        public IActionResult Create()
         {
-            return View("Index",model);
+            return View();
         }
 
-        
+        // POST: Movies/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public IActionResult Create(
+            [Bind("UserName,LastName,Age,Email")] RegisterModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+            return View("Index",model);
+        }
+        /* [HttpPost]
+         public ActionResult Create(RegisterModel model)
+         {
+             return View("Index",model);
+         }
+        */
+
     }
 }
