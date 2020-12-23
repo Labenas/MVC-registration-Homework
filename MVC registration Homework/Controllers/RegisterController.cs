@@ -15,12 +15,6 @@ namespace MVC_registration_Homework.Controllers
         {
             return View();
         }
-        // GET
-        public IActionResult Create()
-        {
-            return View();
-        }
-
         // POST: 
         [HttpPost]
         [ValidateAntiForgeryToken]
