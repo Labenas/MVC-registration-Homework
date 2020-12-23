@@ -24,7 +24,7 @@ namespace MVC_registration_Homework.Models
         public int Age { get; set; }
 
         [EmailAddress(ErrorMessage = "The Email Address is not valid")]
-        [Required(ErrorMessage = "Email adress is required field please enter your email")]
+        [Required(ErrorMessage = "Email adress is empty, please enter your email")]
         public string Email { get; set; }
 
        
